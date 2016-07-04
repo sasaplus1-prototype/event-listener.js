@@ -1,8 +1,3 @@
-/*!
- * @license events.js Copyright(c) 2016 sasa+1
- * https://github.com/sasaplus1-prototype/events.js
- * Released under the MIT license.
- */
 'use strict';
 
 var off = (typeof removeEventListener !== 'undefined') ?
