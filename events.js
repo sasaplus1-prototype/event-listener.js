@@ -77,9 +77,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return element.attachEvent('on' + eventName, callback);
 	  };
 
+	function once(element, eventName, callback, capture) {
+	  var handler = function() {
+	    off(element, eventName, handler, capture);
+
+	    return callback.apply(this, arguments);
+	  };
+
+	  return on(element, eventName, handler, capture);
+	}
+
 	module.exports = {
 	  off: off,
-	  on: on
+	  on: on,
+	  once: once
 	};
 
 
