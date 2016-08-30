@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: __dirname,
     filename: '[name].js',
-    library: ['events'],
+    library: ['event-listener'],
     libraryTarget: 'umd',
   },
 
@@ -34,8 +34,8 @@ module.exports = {
     new webpack.optimize.DedupePlugin,
     new webpack.optimize.AggressiveMergingPlugin,
     new webpack.BannerPlugin([
-      '@license events.js Copyright(c) 2016 sasa+1',
-      'https://github.com/sasaplus1-prototype/events.js',
+      '@license event-listener.js Copyright(c) 2016 sasa+1',
+      'https://github.com/sasaplus1-prototype/event-listener.js',
       'Released under the MIT license.',
     ].join('\n'), {
       options: {

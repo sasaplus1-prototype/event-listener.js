@@ -20,7 +20,18 @@ function once(element, eventName, callback, capture) {
   var handler = function() {
     off(element, eventName, handler, capture);
 
-    return callback.apply(this, arguments);
+    switch (arguments.length) {
+      case 0:
+        return callback.call(this);
+      case 1:
+        return callback.call(this, arguments[0]);
+      case 2:
+        return callback.call(this, arguments[0], arguments[1]);
+      case 3:
+        return callback.call(this, arguments[0], arguments[1], arguments[2]);
+      default:
+        return callback.apply(this, arguments);
+    }
   };
 
   return on(element, eventName, handler, capture);

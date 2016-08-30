@@ -1,6 +1,6 @@
 /*!
- * @license events.js Copyright(c) 2016 sasa+1
- * https://github.com/sasaplus1-prototype/events.js
+ * @license event-listener.js Copyright(c) 2016 sasa+1
+ * https://github.com/sasaplus1-prototype/event-listener.js
  * Released under the MIT license.
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -9,9 +9,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["events"] = factory();
+		exports["event-listener"] = factory();
 	else
-		root["events"] = factory();
+		root["event-listener"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -81,7 +81,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var handler = function() {
 	    off(element, eventName, handler, capture);
 
-	    return callback.apply(this, arguments);
+	    switch (arguments.length) {
+	      case 0:
+	        return callback.call(this);
+	      case 1:
+	        return callback.call(this, arguments[0]);
+	      case 2:
+	        return callback.call(this, arguments[0], arguments[1]);
+	      case 3:
+	        return callback.call(this, arguments[0], arguments[1], arguments[2]);
+	      default:
+	        return callback.apply(this, arguments);
+	    }
 	  };
 
 	  return on(element, eventName, handler, capture);
