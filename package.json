@@ -1,5 +1,5 @@
 {
-  "name": "events",
+  "name": "event-listener",
   "version": "0.2.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "description": "cross browser add/remove event",
@@ -8,12 +8,12 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sasaplus1-prototype/events.js.git"
+    "url": "https://github.com/sasaplus1-prototype/event-listener.js.git"
   },
   "scripts": {
     "build": "npm run compile && npm run minify",
-    "compile": "npm run webpack -- --output-file events.js",
-    "minify": "npm run webpack -- --optimize-minimize --output-file events.min.js",
+    "compile": "npm run webpack -- --output-file event-listener.js",
+    "minify": "npm run webpack -- --optimize-minimize --output-file event-listener.min.js",
     "webpack": "webpack --colors --display-error-details --progress"
   },
   "devDependencies": {
