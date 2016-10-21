@@ -51,7 +51,7 @@ eventListener.once(document.body, 'click', function(event) {
 - `callback`
   - `Function`
 - `capture`
-  - Boolean
+  - `Boolean`
 
 remove event handler.
 
@@ -64,7 +64,7 @@ remove event handler.
 - `callback`
   - `Function`
 - `capture`
-  - Boolean
+  - `Boolean`
 
 add event handler.
 
@@ -77,7 +77,7 @@ add event handler.
 - `callback`
   - `Function`
 - `capture`
-  - Boolean
+  - `Boolean`
 
 remove event handler when executed.
 
